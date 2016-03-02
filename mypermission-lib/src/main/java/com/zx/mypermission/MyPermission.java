@@ -30,8 +30,9 @@ public class MyPermission {
 
     @TargetApi(value = Build.VERSION_CODES.M)
     private static void requireInnerPermission(Object object, int requireCode, String... permissions) {
-        if (MyUtils.isOverMarshmallow()) {
+        if (!MyUtils.isOverMarshmallow()) {
             doExcuteSuccess(object, requireCode);
+            return;
         }
 
         List<String> permissionDeniedList = MyUtils.findDeniedPermission(MyUtils.getActivity(object), permissions);
