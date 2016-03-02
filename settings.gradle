@@ -1,1 +1,1 @@
-include ':app', ':my_permission_annotation', ':com.zx.mypermission', ':mycompiler'
+include ':permission-sample', ':myannotation', ':mypermission-lib', ':mycompiler'
